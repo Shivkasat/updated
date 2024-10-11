@@ -1,0 +1,707 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Header Section */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    height: 70px;
+  }
+
+  .header .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+  }
+
+  .nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+  }
+
+  /* Header Right Section */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .search-box input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .quick-order-btn, .login-btn, .cart-btn {
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Cart Icon */
+  .cart-btn {
+    position: relative;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+  /* Mobile Navigation (Hamburger Menu) */
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    bottom: 40px;
+  }
+
+  /* Bottom Navigation */
+  .nav-bottom {
+    background-color: #f8f9fa;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-bottom li {
+    display: inline-block;
+  }
+
+  .nav-bottom a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  /* Responsive Styling */
+  @media screen and (max-width: 768px) {
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    height: 80px;
+  }
+  .nav-links {
+    display: none; /* Hide navigation links by default on mobile */
+    flex-direction: column;
+    background-color: #333;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    top: 70px; /* Adjust this value to match your header height */
+    left: 0;
+    z-index: 100;
+  }
+
+  /* When the menu is active (visible) */
+  .nav-links.active {
+    display: flex;
+    max-height: 1000px; /* You can adjust this to fit your content */
+    transition: max-height 0.5s ease-in-out; /* Smooth slide-down */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon on mobile */
+    float: right;
+    position: relative;
+    left: 10px;
+    bottom: 2.5px;
+  }
+
+  /* Make sure the rest of the content is always visible */
+  
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .poster {
+    flex: 0 0 100%;
+    padding: 10px;
+  }
+
+  .poster img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Makes the images curvy */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a nice shadow effect */
+    transition: transform 0.5s ease;
+  }
+
+  .poster img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+
+  /* Navigation Buttons */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots for Navigation */
+  .dots {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dots .dot.active {
+    background-color: #717171;
+  }
+
+  /* Responsive Styles */
+  @media (min-width: 769px) {
+    .poster {
+      flex: 0 0 33.33%; /* Show 3 posters at a time on desktop */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .poster {
+      flex: 0 0 100%; /* Show 1 poster at a time on mobile */
+    }
+  }
+  body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: #f4f4f4;
+}
+
+.prescription-container {
+display: flex;
+flex-wrap: wrap; /* Allow content to wrap */
+justify-content: space-between;
+align-items: center;
+background-color: #e0e7ff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+margin: 20px;
+}
+
+
+/* Left Section (Upload Prescription) */
+.left-section {
+display: flex;
+align-items: center;
+}
+
+.left-section img {
+width: 80px;
+margin-right: 20px;
+}
+
+.prescription-content h2 {
+margin: 0;
+color: #333;
+}
+
+.prescription-content p {
+margin: 5px 0 15px 0;
+color: #666;
+}
+
+.upload-btn {
+background-color: #008080;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+font-size: 16px;
+display: flex;
+align-items: center;
+}
+
+.upload-btn span {
+margin-right: 10px;
+}
+
+/* Right Section (Instructions) */
+.right-section {
+display: block;
+}
+
+.right-section h3 {
+margin: 0 0 10px 0;
+color: #333;
+}
+
+.right-section ul {
+list-style-type: none;
+padding: 0;
+}
+
+.right-section ul li {
+color: #666;
+margin: 5px 0;
+}
+
+/* Responsive for Mobile */
+@media screen and (max-width: 768px) {
+.prescription-container {
+  flex-direction: column;
+  text-align: center;
+}
+
+.left-section img {
+  margin-bottom: 10px;
+}
+
+.right-section {
+  display: none; /* Hide the instructions on mobile */
+}
+}
+:root {
+--primary-color: #3498db;
+--hover-color: #2c3e50;
+--font-size-mobile: 14px;
+--font-size-desktop: 16px;
+--transition-duration: 0.3s;
+--section-title-color: #2c3e50;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+.sections-wrapper {
+padding: 20px;
+background-color: #f5f5f5;
+}
+
+.section {
+margin-bottom: 50px;
+text-align: center;
+}
+
+/* Section Titles */
+.section h2 {
+font-size: 24px;
+color: var(--section-title-color);
+margin-bottom: 20px;
+font-weight: bold;
+}
+
+/* Grid Layout */
+.categories {
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+gap: 20px;
+max-width: 1200px;
+width: 100%;
+margin: 0 auto;
+padding: 20px;
+}
+
+.category {
+background-color: white;
+border-radius: 10px;
+text-align: center;
+padding: 20px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.category img {
+max-width: 80px;
+height: auto;
+transition: transform var(--transition-duration);
+}
+
+.category p {
+font-size: var(--font-size-mobile);
+color: var(--primary-color);
+margin-top: 10px;
+font-weight: bold;
+}
+
+/* Hover Effect */
+.category:hover {
+transform: translateY(-10px);
+box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.category:hover img {
+transform: scale(1.1);
+}
+
+/* Responsive Typography and Layout */
+@media (min-width: 50px) {
+.categories {
+    grid-template-columns: repeat(2, 1fr);
+}
+.category p {
+    font-size: calc(var(--font-size-mobile) + 1px);
+}
+}
+
+@media (min-width: 800px) {
+.categories {
+    grid-template-columns: repeat(3, 1fr);
+}
+.category p {
+    font-size: var(--font-size-desktop);
+}
+}
+
+@media (min-width: 1024px) {
+.categories {
+    grid-template-columns: repeat(6, 1fr);
+}
+}
+
+/* Smooth Interaction */
+.category:hover p {
+color: var(--hover-color);
+transition: color var(--transition-duration);
+}
+footer {
+background-color: #f2f2f2;
+padding: 40px 0;
+font-family: Arial, sans-serif;
+}
+
+.footer-section {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+padding: 0 50px;
+}
+
+.footer-column {
+flex: 1;
+min-width: 200px; /* Ensures each column has a minimum width */
+margin-bottom: 20px;
+}
+
+.footer-column h3 {
+font-size: 16px;
+margin-bottom: 10px;
+color: #333;
+}
+
+.footer-column ul {
+list-style-type: none;
+padding: 0;
+}
+
+.footer-column ul li {
+margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+text-decoration: none;
+color: #666;
+font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+color: #007bff;
+}
+
+.payment-partners {
+text-align: center;
+padding: 20px 0;
+background-color: #e0e0e0;
+}
+
+.payment-partners h3 {
+margin-bottom: 15px;
+color: #333;
+}
+
+.partners-logos img {
+width: 60px;
+margin: 0 10px;
+vertical-align: middle;
+}
+
+.partners-logos img:hover {
+transform: scale(1.1);
+transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+.footer-section {
+  flex-direction: column; /* Stack columns vertically on smaller screens */
+  align-items: center;
+}
+
+.footer-column {
+  max-width: 300px;
+  text-align: center;
+}
+
+.partners-logos img {
+  width: 50px;
+}
+}
+/* Slider Container */
+/* Slider Container */
+/* Slider Container */
+.slider-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: relative;
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+overflow: hidden;
+}
+
+/* Review Card Container */
+.review-card-container {
+display: flex; /* Ensure all reviews are in a row */
+transition: transform 0.5s ease;
+width: fit-content; /* This helps accommodate the width of cards */
+}
+
+/* Review Cards */
+.review-card {
+flex: 0 0 33%; /* Show 3 reviews at a time on desktop */
+box-sizing: border-box;
+padding: 20px;
+margin: 0 10px;
+background-color: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Slider Buttons */
+.slider-btn {
+background-color: #007bff;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 50%;
+cursor: pointer;
+font-size: 24px;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 10;
+}
+
+.prev-btn, .next-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+z-index: 1;
+}
+
+.prev-btn {
+left: 10px;
+}
+
+.next-btn {
+right: 10px;
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+.review-card {
+  flex: 0 0 30%; /* Show 1 review at a time on mobile */
+}
+}
+
+/* Tablet View */
+@media (min-width: 768px) and (max-width: 1023px) {
+.review-card {
+  flex: 0 0 50%; /* Show 2 reviews at a time on tablet */
+}
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+.review-card {
+  flex: 0 0 30%; /* Show 3 reviews at a time on desktop */
+
+}
+}
+/* Login Box Styling */
+.login-container {
+position: relative;
+}
+
+.login-box {
+position: fixed;
+top: 0;
+right: -100%; /* Start off-screen */
+width: 350px;
+height: 100%;
+background-color: #fff;
+box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+transition: right 0.5s ease-in-out;
+z-index: 9999;
+}
+
+.login-content {
+padding: 20px;
+background-image: url('https://imgs.search.brave.com/Esbqb2mvFEC-xAH0S0WLqkX22jQzQahTDmofdks9Lxg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzMzLzY2LzI4/LzM2MF9GXzIzMzY2/MjgzM192c1dSbXZ3/S29Zc2xuV2NVM0dJ/RktyYjh6NThHdlFI/aC5qcGc');
+background-size: 400px 
+}
+
+.login-box h2 {
+margin-bottom: 30px;
+
+
+}
+
+.send-otp-btn {
+width: 86%;
+background-color: #1dbf73;
+border: none;
+color: white;
+padding: 10px;
+cursor: pointer;
+margin-top: 20px;
+}
+
+.close-btn {
+font-size: 24px;
+cursor: pointer;
+position: absolute;
+top: 10px;
+right: 10px;
+}
+.Logintxt {
+font-size: 21px;
+margin-top: 100px;
+
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+.login-box {
+    right: auto;
+    left: -100%; /* Slide from the left */
+    transition: left 0.5s ease-in-out;
+}
+}
+
+/* Active Class for Sliding Effect */
+.show-login {
+right: 0;
+}
+
+@media (max-width: 768px) {
+.show-login {
+    left: 0;
+}
+}

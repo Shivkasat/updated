@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Products Store</title>
+  <link rel="stylesheet" href="styles.css">
+  
+    
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" width="120" height="50">
+     
+      
+    </div>
+
+    <!-- Hamburger Menu Icon for Mobile -->
+    <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" id="navLinks">
+      <a href="#">MEDICINES</a>
+      <a href="#" id="lab-tests">LAB TESTS <span class="badge">SAFE</span></a>
+      <a href="#" id="consult-doctors">CONSULT DOCTORS</a>
+      <a href="#" id="health-plan">HEALTH PLAN <span class="badge">SAVE MORE</span></a>
+
+      <button class="login-btn" onclick="openLogin()">Login</button>
+      <button class="quick-order-btn" style="margin-top: px;">Quick Order</button>
+      <button class="cart-btn" style="margin-top: px;">🛒<span class="cart-count">0</span></button>
+    </nav>
+  </header>
+  <div class="content-container">
+  <!-- Bottom Navigation -->
+  <nav class="nav-bottom">
+    <ul>
+      <li><a href="#">Health Resource Center</a></li>
+      <li><a href="#">Vitamins & Nutrition</a></li>
+      <li><a href="#">Nutritional Drinks</a></li>
+      <li><a href="#">Fitness Supplements</a></li>
+      
+    </ul>
+  </nav>
+  <div class="slider-container">
+    <div class="slider" id="slider">
+      <div class="poster"><img src="https://cdn01.pharmeasy.in/dam/banner/banner/d9a2b50e73a-3.jpg" alt="Poster 1"></div>
+      <div class="poster"><img src="https://cdn01.pharmeasy.in/dam/banner/banner/93b84087381-2.jpg" alt="Poster 2"></div>
+      <div class="poster"><img src="https://cdn01.pharmeasy.in/dam/banner/banner/0c2022bff6d-Hp-Banner-LS.jpg" alt="Poster 3"></div>
+      <div class="poster"><img src="https://cdn01.pharmeasy.in/dam/banner/banner/c7e8e13d5a0-Evion_a.jpg" alt="Poster 4"></div>
+      <div class="poster"><img src="https://cdn01.pharmeasy.in/dam/banner/banner/54b412749c3-24PHARMA_HP.jpg" alt="Poster 5"></div>
+      <div class="poster"><img src="https://cdn01.pharmeasy.in/dam/banner/banner/37adda767ea-PROHANCE_A.jpg" alt="Poster 6"></div>
+    </div>
+
+    <!-- Buttons -->
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="dots" id="dots">
+    <span class="dot" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+  </div>
+  <div class="popular-categories">
+  
+    <link rel="stylesheet" href="styles.css">
+    <div class="section">
+      <h2>Popular categories</h2>
+    <div class="categories">
+      
+        <div class="category">
+            <img src="https://onemg.gumlet.io/859adc35-4c39-4094-a74d-281ffff9a3e6.png?format=auto" alt="Best offers">
+            <p>Best offers</p>
+        </div>
+        <div class="category">
+            <img src="https://onemg.gumlet.io/67be6470-4f74-4a2e-a37a-ececb775afeb.png?format=auto" alt="Vitamins & Supplements">
+            <p>Vitamins & Supplements</p>
+        </div>
+        <div class="category">
+            <img src="https://onemg.gumlet.io/diagnostics%2F2024-01%2F1706010756_Women+care.jpg?format=auto" alt="Nutritional Drinks">
+            <p>Nutritional Drinks</p>
+        </div>
+        <div class="category">
+            <img src="https://onemg.gumlet.io/624f6cd2-f857-4f8c-a689-75c849516ea8.png?format=auto" alt="Skin Care">
+            <p>Skin Care</p>
+        </div>
+        <div class="category">
+            <img src="https://onemg.gumlet.io/4e4b7cd8-0885-42c2-8915-65b7355fc1d8.png?format=auto" alt="Hair Care">
+            <p>Hair Care</p>
+        </div>
+        <div class="category">
+            <img src="https://onemg.gumlet.io/33d8bac6-26c1-4828-8b39-4f6183430833.png?format=auto" alt="Pain Relif">
+            <p>Pain Relief</p>
+        </div>
+  
+    </div>
+  
+  </div>
+      <!-- Wellness Nutrition Section -->
+      <div class="section">
+        <h2>Wellness Nutrition</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/91acf5816cbb401f8e09e809a92808ad.jpg" alt="Protein Supplements">
+                <p>Protein Supplements</p>
+            </div>
+            <div class="category">
+                <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/10b2f9449d0b4d259d287d781e86416e.jpg" alt="Energy Drinks">
+                <p>Energy Drinks</p>
+            </div>
+            <!-- Add more categories as needed -->
+        </div>
+    </div>
+  
+    <!-- Health Essentials Section -->
+    <div class="section">
+        <h2>Health Essentials</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/diagnostics%2F2024-05%2F1716551605_Antiseptic+Solution.png?format=auto" alt="First Aid">
+                <p>First Aid</p>
+            </div>
+            <div class="category">
+                <img src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/t08whsv3jq2k64alkrcy.jpg" alt="Masks & Sanitizers">
+                <p>Masks & Sanitizers</p>
+            </div>
+            <!-- Add more categories as needed -->
+        </div>
+    </div>
+  </div>
+    <!-- Order with Prescription Section -->
+    <div class="prescription-container">
+      <div class="left-section">
+        <img src="https://via.placeholder.com/100x100?text=RX" alt="Prescription Icon">
+        <div class="prescription-content">
+          <h2>Order with Prescription</h2>
+          <p>Upload prescription and we will deliver your medicines</p>
+          <button class="upload-btn">
+            <span>&#128206;</span> Upload
+          </button>
+        </div>
+      </div>
+      
+      <!-- Instructions (Visible on all devices) -->
+      <div class="right-section">
+        <h3>How does this work?</h3>
+        <ul>
+          <li>1. Upload a photo of your prescription</li>
+          <li>2. Add delivery address and place the order</li>
+          <li>3. We will call you to confirm the medicines</li>
+          <li>4. Now, sit back! Your medicines will be delivered at your doorstep</li>
+        </ul>
+      </div>
+    </div> <br>
+
+    <div class="login-container">
+
+      <div id="login-box" class="login-box">
+          <div class="login-content">
+              <span class="close-btn" onclick="closeLogin()">&times;</span>
+              <h2 >Login/Sign up to continue with your order</h2>
+              <input type="text" placeholder="Enter your mobile number" class="Logintxt" />
+              <button class="send-otp-btn">Send OTP</button>
+          </div>
+      </div>
+    </div>
+    <div class="section">
+    
+    <h2>What Our Customer Says:-</h2> 
+  </div>
+    <div class="slider-container">
+
+      <div class="review-card-container">
+          <div class="review-card">
+              <h3>Nisha Tomar</h3>
+              <p>March 22, 2023</p>
+              <blockquote>
+                  I love using the PharmEasy app! They have everything related to health, like medicines, lab tests, and other healthcare essentials, at GREAT prices. Their service is amazing and quick, and the app is also easy to use.
+              </blockquote>
+          </div>
+          <div class="review-card">
+              <h3>Arvind Dingwani</h3>
+              <p>February 26, 2023</p>
+              <blockquote>
+                  I was a bit doubtful about using an online pharmacy, but PharmEasy exceeded my expectations. The discount coupons were great, prices were very reasonable, and the delivery was quick and smooth. I would definitely use it again.
+              </blockquote>
+          </div>
+          <div class="review-card">
+              <h3>Shreya Sharma</h3>
+              <p>April 15, 2023</p>
+              <blockquote>
+                  I can't recommend the PharmEasy app enough! It's the perfect one-stop shop for my whole family's healthcare needs. The offers you can get here are beyond what other platforms offer. Customer service, including returns, is also very convenient. This app deserves 5 stars.
+              </blockquote>
+          </div>
+          <div class="review-card">
+              <h3>Rajeev Kapoor</h3>
+              <p>January 3, 2023</p>
+              <blockquote>
+                  I recently started using PharmEasy, and I'm already a fan. They have a great selection of products at reasonable prices, which is a huge relief for my wallet. Their delivery is always on time, and their customer service is top-notch. Thank you.
+              </blockquote>
+          </div>
+          <div class="review-card">
+              <h3>Alisha Verma</h3>
+              <p>March 30, 2023</p>
+              <blockquote>
+                  The PharmEasy app has made my life so much easier! I can order medicines and get them delivered right to my doorstep without any hassle. The prices are competitive, and I appreciate the regular offers.
+              </blockquote>
+          </div>
+          <div class="review-card">
+              <h3>Suresh Mehta</h3>
+              <p>February 15, 2023</p>
+              <blockquote>
+                  Fantastic service! I ordered some healthcare products, and they arrived on time. The quality of the items was excellent, and the app is user-friendly. Highly recommended!
+              </blockquote>
+          </div>
+      </div>
+      <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    
+    
+    
+    
+    <footer>
+      <div class="footer-section">
+        <div class="footer-column company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Partner with Tushar Medicals</a></li>
+            <li><a href="#">Sell at Tushar Medicals</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column services">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="#">Order Medicine</a></li>
+            <li><a href="#">General Items</a></li>
+            <li><a href="#">Syrups</a></li>
+            <li><a href="#">Lab Tests</a></li>
+            <li><a href="#">Health Plans</a></li>
+            <li><a href="#">Consult Doctors</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column categorie">
+          <h3>Featured Categories</h3>
+          <ul>
+            <li><a href="#">Must Haves</a></li>
+            <li><a href="#">Ayurveda Products</a></li>
+            <li><a href="#">Health & Wellness</a></li>
+            <li><a href="#">Personal Care</a></li>
+            <li><a href="#">Healthcare Devices</a></li>
+            <li><a href="#">Diabetic Care</a></li>
+            <li><a href="#">Skin Care</a></li>
+            <li><a href="#">Mother and Baby Care</a></li>
+            
+            <li><a href="#">Fitness & Nutrition</a></li>
+            <li><a href="#">Elderly Care</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column help">
+          <h3>Need Help</h3>
+          <ul>
+            <li><a href="#">Browse All Medicines</a></li>
+            <li><a href="#">Browse by Category</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact Support</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column policy">
+          <h3>Policy Info</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Return & Refund Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Customer Support Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="payment-partners">
+        <h3>Payment Partners</h3>
+        <div class="partners-logos">
+          <img src="https://imgs.search.brave.com/60PeXj0IzPVnchRjRjsJWrWJRvCJo47Prn-KtrXi4UI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi83LzcxL1Bo/b25lUGVfTG9nby5z/dmcvMjIwcHgtUGhv/bmVQZV9Mb2dvLnN2/Zy5wbmc" alt="PhonePe">
+          <img src="https://imgs.search.brave.com/kIgDiUemVSqvwkrZy2TQgqne_8pnjitdggAs-YjaVUI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL2ZyZWUv/cG5nLTI1Ni9mcmVl/LXBheXRtLWxvZ28t/aWNvbi1kb3dubG9h/ZC1pbi1zdmctcG5n/LWdpZi1maWxlLWZv/cm1hdHMtLW9ubGlu/ZS1wYXltZW50LWJy/YW5kLWxvZ29zLXBh/Y2staWNvbnMtMjI2/NDQ4LnBuZz9mPXdl/YnAmdz0yNTY" alt="Paytm">
+          <img src="https://imgs.search.brave.com/YUh6_4PJK3X6kKS8D3lkrMpLOfNyqwMRY2Gn8CcsaCg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2E0L01h/c3RlcmNhcmRfMjAx/OV9sb2dvLnN2Zy8y/MjBweC1NYXN0ZXJj/YXJkXzIwMTlfbG9n/by5zdmcucG5n" alt="Mastercard">
+          <img src="https://imgs.search.brave.com/6DoF2ew2gAx7T7et96wU50Nu096TLUZZ-5896XIfCH0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9kL2Q2L1Zp/c2FfMjAyMS5zdmcv/MjIwcHgtVmlzYV8y/MDIxLnN2Zy5wbmc" alt="Visa">
+        </div>
+      </div>
+    </footer> 
+  <!-- Footer -->
+
+
+  <script>
+    // Toggle mobile navigation menu
+    function toggleMenu() {
+      var navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("active");
+    }
+
+
+
+let currentIndex = 0;
+    const totalSlides = 6;
+    let slideInterval;
+
+    function showSlide(index) {
+  const slider = document.getElementById('slider');
+  const dots = document.querySelectorAll('.dot');
+  const isMobile = window.innerWidth <= 768;
+  const postersToShow = isMobile ? 1 : 3;
+  currentIndex = (index + totalSlides) % totalSlides;
+
+  // Fixing the reference to '.poster' instead of '.slide'
+  const slideWidth = document.querySelector('.poster').offsetWidth;
+  slider.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+
+  // Update active dot
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[Math.floor(currentIndex / postersToShow)].classList.add('active');
+}
+
+    function moveSlide(direction) {
+      stopAutoSlide();
+      showSlide(currentIndex + direction);
+      startAutoSlide();  // Resume auto-sliding after manual navigation
+    }
+
+    function currentSlide(index) {
+      stopAutoSlide();
+      showSlide(index);
+      startAutoSlide();  // Resume auto-sliding after manual navigation
+    }
+
+    function startAutoSlide() {
+      const isMobile = window.innerWidth <= 768;
+      const postersToShow = isMobile ? 1 : 3;
+      slideInterval = setInterval(() => {
+        showSlide(currentIndex + postersToShow); // Slide by the number of posters visible
+      }, 3000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(slideInterval);
+    }
+
+    window.onload = function() {
+      showSlide(currentIndex);
+      startAutoSlide();
+    };
+
+    window.onresize = function() {
+      stopAutoSlide();
+      startAutoSlide();
+    };
+  function openLogin() {
+  document.getElementById('login-box').classList.add('show-login');
+}
+
+function closeLogin() {
+  document.getElementById('login-box').classList.remove('show-login');
+}
+let reviewIndex = 0; // Changed from currentIndex to reviewIndex
+const reviews = document.querySelectorAll('.review-card');
+const reviewContainer = document.querySelector('.review-card-container');
+const totalReviews = reviews.length;
+let reviewsPerView = getReviewsPerView(); // Dynamically get the reviews per view
+
+function getReviewsPerView() {
+  if (window.innerWidth <= 767) {
+    return 1; // Mobile: 1 review at a time
+  } else if (window.innerWidth >= 1024) {
+    return 3; // Desktop: 3 reviews at a time
+  } else {
+    return 2; // Tablet: 2 reviews at a time
+  }
+}
+
+// Set the initial position of the review container
+function updateReviewPosition() {
+  reviewContainer.style.transform = `translateX(-${(reviewIndex * 100) / reviewsPerView}%)`;
+}
+
+// Add event listeners to the buttons
+document.querySelector('.next-btn').addEventListener('click', () => {
+  if (reviewIndex < totalReviews - reviewsPerView) {
+    reviewIndex++;
+  } else {
+    reviewIndex = 0; // Loop back to the start
+  }
+  updateReviewPosition();
+});
+
+document.querySelector('.prev-btn').addEventListener('click', () => {
+  if (reviewIndex > 0) {
+    reviewIndex--;
+  } else {
+    reviewIndex = totalReviews - reviewsPerView; // Loop back to the last set
+  }
+  updateReviewPosition();
+});
+
+// Dynamically adjust the view when the window is resized
+window.addEventListener('resize', () => {
+  reviewsPerView = getReviewsPerView();
+  updateReviewPosition(); // Adjust the position based on new number of visible reviews
+});
+
+// Initialize the position
+updateReviewPosition();
+
+  </script>
+
+</body>
+</html>
+
